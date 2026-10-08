@@ -45,8 +45,12 @@ Before the change, client workstations had a maximum of 3 attempts on login befo
 ## Backout plan
 Rollback trigger:
 <!-- What specific result makes you undo this? A command output, or a symptom a user would report. -->
+Rollback trigger: net accounts /domain shows anything other than threshold 10 with duration and window still at 30. Or the test account locks before 10 attempts. Or users report sign-in problems after the change.
+Steps:
+ 1. Edit the Default Domain Policy, set the threshold back to 3, and run gpupdate /force on the DC.
+ 2. Run net accounts /domain on the client and confirm it shows
+ 3. Only if the GPO itself is broken, restore the pre-CR-001 snapshot.
 
-1.
 <!-- Two ways back: the fast one (snapshot) and the precise one (reverse the setting). Which do you use first, and why? -->
 
 ## Verification, from the user's side
