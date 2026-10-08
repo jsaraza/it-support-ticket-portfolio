@@ -19,9 +19,11 @@
 <!-- Users affected: who does a domain-level account policy apply to? -->
 
 ## Reason for change
+User could possibly forget their password, causing them to reach out to unnecessarily reach out to IT, essentially wasting their time as opposed to saving time by allowing for up to 10 attempts on login.
 <!-- 2–3 sentences. What's wrong with 3? Your Project 1 README already argues it. What does 10 fix, and what does it give up? -->
 
 ## Current state (before), with evidence
+Before the change, client workstations had a maximum of 3 attempts on login before being locked out. By running `net accounts /domain` on the admin powershell, it will return the lockout threshold. 
 <!-- Fill in after running `net accounts /domain` on AD-CL01: paste the lockout lines and link the screenshot. -->
 
 ## Implementation steps
