@@ -24,6 +24,14 @@ User could possibly forget their password, causing them to reach out to unnecess
 
 ## Current state (before), with evidence
 Before the change, client workstations had a maximum of 3 attempts on login before being locked out. By running `net accounts /domain` on the admin powershell, it will return the lockout threshold. 
+
+`net accounts /domain` on AD-CL01, 2026-10-08:
+
+    Lockout threshold:                          3
+    Lockout duration (minutes):                 30
+    Lockout observation window (minutes):       30
+
+![Lockout policy before the change](../../screenshots/cr-001-before-net-accounts.png)
 <!-- Fill in after running `net accounts /domain` on AD-CL01: paste the lockout lines and link the screenshot. -->
 
 ## Implementation steps
