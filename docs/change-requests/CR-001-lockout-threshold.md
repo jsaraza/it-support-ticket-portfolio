@@ -54,8 +54,8 @@ Rollback trigger:
 **Expected:** sign-in succeeds, and `Search-ADAccount -LockedOut` on AD-DC01 returns nothing.
 
 **Result:**
+![Lockout policy before the change](../../screenshots/cr-001-after-net-accounts.png)
 
 ## Outcome 
 
-![Lockout policy before the change](../../screenshots/cr-001-after-net-accounts.png)
 <!-- Completed / Rolled back / Partial: what happened, and anything unexpected. -->
