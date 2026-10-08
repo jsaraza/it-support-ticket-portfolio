@@ -31,7 +31,12 @@ Before the change, client workstations had a maximum of 3 attempts on login befo
     Lockout duration (minutes):                 30
     Lockout observation window (minutes):       30
 
+#Before
 ![Lockout policy before the change](../../screenshots/cr-001-before-net-accounts.png)
+
+#After
+![Lockout policy before the change](../../screenshots/cr-001-after-net-accounts.png)
+
 <!-- Fill in after running `net accounts /domain` on AD-CL01: paste the lockout lines and link the screenshot. -->
 
 ## Implementation steps
