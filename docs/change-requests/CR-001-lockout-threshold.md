@@ -6,10 +6,10 @@
 | Implemented by | J. Saraza |
 | Approved by | Self (lab). In production: |
 | Date / window | 2026-10-08, |
-| Change type | |
-| Risk | |
+| Change type | Normal |
+| Risk | Low |
 | Systems affected | AD-DC01: Default Domain Policy (Account Lockout Policy) |
-| Users affected | |
+| Users affected | all domain user accounts |
 
 <!-- Approved by: who signs off on a change like this in a real organisation? -->
 <!-- Date / window: add the time you'll make the change. -->
@@ -24,6 +24,15 @@ User could possibly forget their password, causing them to reach out to unnecess
 
 ## Current state (before), with evidence
 Before the change, client workstations had a maximum of 3 attempts on login before being locked out. By running `net accounts /domain` on the admin powershell, it will return the lockout threshold. 
+
+`net accounts /domain` on AD-CL01, 2026-10-08:
+
+    Lockout threshold:                          3
+    Lockout duration (minutes):                 30
+    Lockout observation window (minutes):       30
+
+![Lockout policy before the change](../../screenshots/cr-001-before-net-accounts.png)
+
 <!-- Fill in after running `net accounts /domain` on AD-CL01: paste the lockout lines and link the screenshot. -->
 
 ## Implementation steps
@@ -36,8 +45,12 @@ Before the change, client workstations had a maximum of 3 attempts on login befo
 ## Backout plan
 Rollback trigger:
 <!-- What specific result makes you undo this? A command output, or a symptom a user would report. -->
+Rollback trigger: net accounts /domain shows anything other than threshold 10 with duration and window still at 30. Or the test account locks before 10 attempts. Or users report sign-in problems after the change.
+Steps:
+ 1. Edit the Default Domain Policy, set the threshold back to 3, and run gpupdate /force on the DC.
+ 2. Run net accounts /domain on the client and confirm it shows
+ 3. Only if the GPO itself is broken, restore the pre-CR-001 snapshot.
 
-1.
 <!-- Two ways back: the fast one (snapshot) and the precise one (reverse the setting). Which do you use first, and why? -->
 
 ## Verification, from the user's side
@@ -45,6 +58,8 @@ Rollback trigger:
 **Expected:** sign-in succeeds, and `Search-ADAccount -LockedOut` on AD-DC01 returns nothing.
 
 **Result:**
+![Lockout policy before the change](../../screenshots/cr-001-after-net-accounts.png)
 
-## Outcome
+## Outcome 
+
 <!-- Completed / Rolled back / Partial: what happened, and anything unexpected. -->
