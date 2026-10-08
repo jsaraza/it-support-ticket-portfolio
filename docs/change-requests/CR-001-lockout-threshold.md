@@ -6,10 +6,10 @@
 | Implemented by | J. Saraza |
 | Approved by | Self (lab). In production: |
 | Date / window | 2026-10-08, |
-| Change type | |
-| Risk | |
+| Change type | Normal |
+| Risk | Low |
 | Systems affected | AD-DC01: Default Domain Policy (Account Lockout Policy) |
-| Users affected | |
+| Users affected | all domain user accounts |
 
 <!-- Approved by: who signs off on a change like this in a real organisation? -->
 <!-- Date / window: add the time you'll make the change. -->
