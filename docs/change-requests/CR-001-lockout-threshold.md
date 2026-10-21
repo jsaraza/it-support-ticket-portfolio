@@ -11,16 +11,8 @@
 | Systems affected | AD-DC01: Default Domain Policy (Account Lockout Policy) |
 | Users affected | all domain user accounts |
 
-<!-- Approved by: who signs off on a change like this in a real organisation? -->
-<!-- Date / window: add the time you'll make the change. -->
-<!-- Change type: Standard, Normal or Emergency? Pick one and be ready to defend it. -->
-<!-- Risk: Low / Medium / High, plus one reason. What breaks if you get it wrong, and for whom? -->
-<!-- Systems affected: confirm this is the GPO where you set lockout in Project 1. -->
-<!-- Users affected: who does a domain-level account policy apply to? -->
-
 ## Reason for change
 User could possibly forget their password, causing them to reach out to unnecessarily reach out to IT, essentially wasting their time as opposed to saving time by allowing for up to 10 attempts on login.
-<!-- 2–3 sentences. What's wrong with 3? Your Project 1 README already argues it. What does 10 fix, and what does it give up? -->
 
 ## Current state (before), with evidence
 Before the change, client accounts had a maximum of 3 attempts on login before being locked out. By running `net accounts /domain` on the admin powershell, it will return the lockout threshold. 
@@ -33,7 +25,6 @@ Before the change, client accounts had a maximum of 3 attempts on login before b
 
 ![Lockout policy before the change](../../screenshots/a2/cr-001-before-net-accounts.png)
 
-<!-- Fill in after running `net accounts /domain` on AD-CL01: paste the lockout lines and link the screenshot. -->
 
 ## Implementation steps
 1. Take a VirtualBox snapshot of AD-DC01 named `pre-CR-001`.
@@ -44,7 +35,6 @@ Before the change, client accounts had a maximum of 3 attempts on login before b
 
 ## Backout plan
 Rollback trigger:
-<!-- What specific result makes you undo this? A command output, or a symptom a user would report. -->
 Net accounts /domain shows anything other than threshold 10 with duration and window still at 30. Or the test account locks before 10 attempts. Or users report sign-in problems after the change.
 Steps:
  1. Edit the Default Domain Policy, set the threshold back to 3, and run gpupdate /force on the DC.
@@ -52,7 +42,6 @@ Steps:
  3. Only if the GPO itself is broken, restore the pre-CR-001 snapshot.
 
 Reverting the setting back changes one variable and tests to see if the changed setting was causing an issue. Rolling back to a previous snapshot can remove changes between that snapshot and the current state of the workstation that aren't intended to be reomved.
-<!-- Two ways back: the fast one (snapshot) and the precise one (reverse the setting). Which do you use first, and why? -->
 
 ## Verification, from the user's side
 **Test:** sign in to AD-CL01 as `tnguyen` with the wrong password 4 times, then with the correct password.
@@ -65,5 +54,3 @@ Threshold before account gets locked out increases from 3 to 10
 
 ## Outcome 
 Changed the amount of attempts the user gets before account is locked out, thereby increasing the margin for human error. This change request decreases the need for unneeded IT tickets, increasing IT efficiency and decreasing unimportant work.
-
-<!-- Completed / Rolled back / Partial: what happened, and anything unexpected. -->
