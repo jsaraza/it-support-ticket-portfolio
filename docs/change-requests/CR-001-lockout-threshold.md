@@ -31,7 +31,7 @@ Before the change, client workstations had a maximum of 3 attempts on login befo
     Lockout duration (minutes):                 30
     Lockout observation window (minutes):       30
 
-![Lockout policy before the change](../../screenshots/a1/cr-001-before-net-accounts.png)
+![Lockout policy before the change](../../screenshots/a2/cr-001-before-net-accounts.png)
 
 <!-- Fill in after running `net accounts /domain` on AD-CL01: paste the lockout lines and link the screenshot. -->
 
@@ -58,7 +58,7 @@ Steps:
 **Expected:** sign-in succeeds, and `Search-ADAccount -LockedOut` on AD-DC01 returns nothing.
 
 **Result:**
-![Lockout policy before the change](../../screenshots/a1//cr-001-after-net-accounts.png)
+![Lockout policy before the change](../../screenshots/a2/cr-001-after-net-accounts.png)
 
 ## Outcome 
 
