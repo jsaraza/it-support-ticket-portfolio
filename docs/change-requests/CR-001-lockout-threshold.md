@@ -59,10 +59,11 @@ Reverting the setting back changes one variable and tests to see if the changed 
 **Expected:** sign-in succeeds, and `Search-ADAccount -LockedOut` on AD-DC01 returns nothing.
 
 **Result:**
-
+Threshold before account gets locked out increases from 3 to 10
 
 ![Lockout policy before the change](../../screenshots/a2/cr-001-after-net-accounts.png)
 
 ## Outcome 
+Changed the amount of attempts the user gets before account is locked out, thereby increasing the margin for human error. This change request decreases the need for unneeded IT tickets, increasing IT efficiency and decreasing unimportant work.
 
 <!-- Completed / Rolled back / Partial: what happened, and anything unexpected. -->
