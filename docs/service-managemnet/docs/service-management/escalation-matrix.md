@@ -1,42 +1,30 @@
-\# Escalation matrix
+# Priority and SLA definitions
 
+Priority is set from **impact** (how many people are affected) and **urgency** (how badly it stops work).
 
-
-\## Tiers
-
-<!-- One line each in your own words: Tier 1, Tier 2, Tier 3, Security. -->
-
-
-
-| Issue | First owner | Escalate to | Escalate when |
-
+## Priority matrix
+| Impact \ Urgency | High: work stopped, no workaround | Medium: degraded, workaround exists | Low: inconvenience or request |
 |---|---|---|---|
+| **Company-wide or critical service** | P1 | P2 | P3 |
+| **Department or group** | P2 | P2 | P3 |
+| **Single user** | P2 | P3 | P4 |
 
-| Password reset or account unlock | | | |
+<!-- Can you defend every cell? Teck supports executives. Would you raise an executive's single-user issue a level? Change the matrix or add a rule. -->
 
-| Repeated lockouts on one account | | | |
+## SLA targets
+| Priority | Name | Example | First response | Resolution target | Coverage |
+|---|---|---|---|---|---|
+| P1 | Critical | | | | 24/7 |
+| P2 | High | | | | |
+| P3 | Medium | | | | Business hours |
+| P4 | Low | | | | Business hours |
 
-| Mapped drive or share access | | | |
+<!-- Use lab examples where you can, e.g. DC down = nobody can sign in. -->
 
-| Group Policy not applying | | | |
+## Rules
+<!-- 3–4 rules in your own words: who sets priority; when it gets raised (e.g. a second user reports the same thing); what happens when an SLA is about to be missed. -->
 
-| PC won't boot / hardware fault | | | |
-
-| New starter or leaver | | | |
-
-| Phishing email or suspicious activity | | | |
-
-| Server or DC down / many users affected | | | |
-
-| Microsoft 365 / Outlook issue | | | |
-
-
-
-<!-- "Escalate when" should be a concrete trigger: needs admin rights, no progress after X minutes, more than one user affected, any sign of compromise. -->
-
-
-
-\## Rules
-
-<!-- 2–3 rules. Hint: when you escalate, what do you hand over? Your tickets' Diagnosis section is the answer. What should Tier 1 NOT do with a suspected phishing email? -->
-
+## Tickets in this portfolio
+| Ticket | Priority | Why |
+|---|---|---|
+| TICKET-001 | | |
