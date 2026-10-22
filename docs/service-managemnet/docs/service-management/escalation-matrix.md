@@ -1,30 +1,21 @@
-# Priority and SLA definitions
+# Escalation matrix
 
-Priority is set from **impact** (how many people are affected) and **urgency** (how badly it stops work).
+## Tiers
+<!-- One line each in your own words: Tier 1, Tier 2, Tier 3, Security. -->
 
-## Priority matrix
-| Impact \ Urgency | High: work stopped, no workaround | Medium: degraded, workaround exists | Low: inconvenience or request |
+| Issue | First owner | Escalate to | Escalate when |
 |---|---|---|---|
-| **Company-wide or critical service** | P1 | P2 | P3 |
-| **Department or group** | P2 | P2 | P3 |
-| **Single user** | P2 | P3 | P4 |
+| Password reset or account unlock | | | |
+| Repeated lockouts on one account | | | |
+| Mapped drive or share access | | | |
+| Group Policy not applying | | | |
+| PC won't boot / hardware fault | | | |
+| New starter or leaver | | | |
+| Phishing email or suspicious activity | | | |
+| Server or DC down / many users affected | | | |
+| Microsoft 365 / Outlook issue | | | |
 
-<!-- Can you defend every cell? Teck supports executives. Would you raise an executive's single-user issue a level? Change the matrix or add a rule. -->
-
-## SLA targets
-| Priority | Name | Example | First response | Resolution target | Coverage |
-|---|---|---|---|---|---|
-| P1 | Critical | | | | 24/7 |
-| P2 | High | | | | |
-| P3 | Medium | | | | Business hours |
-| P4 | Low | | | | Business hours |
-
-<!-- Use lab examples where you can, e.g. DC down = nobody can sign in. -->
+<!-- "Escalate when" should be a concrete trigger: needs admin rights, no progress after X minutes, more than one user affected, any sign of compromise. -->
 
 ## Rules
-<!-- 3–4 rules in your own words: who sets priority; when it gets raised (e.g. a second user reports the same thing); what happens when an SLA is about to be missed. -->
-
-## Tickets in this portfolio
-| Ticket | Priority | Why |
-|---|---|---|
-| TICKET-001 | | |
+<!-- 2–3 rules. Hint: when you escalate, what do you hand over? Your tickets' Diagnosis section is the answer. What should Tier 1 NOT do with a suspected phishing email? -->
