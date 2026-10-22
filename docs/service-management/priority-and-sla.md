@@ -29,7 +29,7 @@ Priority is set from **impact** (how many people are affected) and **urgency** (
 4. What happens when an SLA is about to be missed?
    Escalate by handing to someone with more authority or skill before the deadline not after. A common trigger is 75% of the resolution time used up: tell the team lead or the next tier and update the user.
 
-##Closing Tickets:## 
+## Closing Tickets: 
   A ticket is only closed once the user confirms the fix works
 
 ## Tickets in this portfolio
