@@ -13,9 +13,9 @@ Priority is set from **impact** (how many people are affected) and **urgency** (
 ## SLA targets
 | Priority | Name | Example | First response | Resolution target | Coverage |
 |---|---|---|---|---|---|
-| P1 | Critical | Domain controller down, so no one can sign in | 15mins | 4 Hours | 24/7 |
-| P2 | High | Salesshare unreachable for the whole sales department | 30 mins | 8 Hours | 24/7 |
-| P3 | Medium | One User's S: drive missing | 4 business hours | 3 business days | Business hours |
+| P1 | Critical | Domain controller down, so no one can sign in | 15 minutes | 4 Hours | 24/7 |
+| P2 | High | Salesshare unreachable for the whole sales department | 30 minutes | 8 Hours | 24/7 |
+| P3 | Medium | Whole department has to repeat a login and login's are not saved | 4 business hours | 3 business days | Business hours |
 | P4 | Low | User asks for a new desktop shortcut or a software install | 1 business day | 5 business days | Business hours |
 
 
@@ -35,4 +35,4 @@ Priority is set from **impact** (how many people are affected) and **urgency** (
 ## Tickets in this portfolio
 | Ticket | Priority | Why |
 |---|---|---|
-| TICKET-001 | | |
+| TICKET-001 | P2 | One person is affected and it stops the person from accessing that file and doing work.  |
