@@ -2,23 +2,23 @@
 
 | Field | Value |
 |---|---|
-| Priority | medium |
+| Priority | P2 |
 | Category | GPO |
-| Reported by | John Doe (jdoe), Sales — new hire |
+| Reported by | Jordan Doe (jdoe), Sales — new hire |
 | Date | 2026-10-21 |
 | Environment | Reproduced in lab: AD-DC01 (Server 2022), AD-CL01 (Windows 10) |
 
 ## Request
-John Doe calls complaining that he does not have access to the S Sales drive.
+Jordan Doe calls complaining that he does not have access to the S Sales drive.
 
 ## Diagnosis
 First step is to login as jdoe to start diagnosing the issue.
 
-1. Opened '\\AD-DC01\Sales' to first determine if jdoe has access to the drive at all. RESULT: "permission error". Rules out DNS or the network issue because the server answered.
+1. Opened '\\AD-DC01\SalesShare' to first determine if jdoe has access to the drive at all. RESULT: "permission error". Rules out DNS or the network issue because the server answered.
  
   ![](../../screenshots/t001/t001-no-salesshare-access.png)
 
-2. Run 'gpresult /r' and look at the user settings. RESULT: Applied Under Group Policy Objects the Map Sales Drive is not listed and CN=Users, NOT Sales OU. Rules out a broken faulty drive. Leads us to believe that the issue is scope of GPO
+2. Run 'gpresult /r' and look at the user settings. RESULT: Applied Under Group Policy Objects the Map Sales Drive is not listed and CN=Users, NOT Sales OU. A drive Map that applied but broke. Leads us to believe that the issue is scope of GPO
 
   ![](../../screenshots/t001/t001-diagnose-user-settings.png)
 
@@ -36,7 +36,7 @@ First step is to login as jdoe to start diagnosing the issue.
 S: drive appears in file explorer and user is finally able to access the S: drive and create a text file. Running 'gpresult /r' shows Map Sales Drive. 
 
 ## Resolution
-Moving jdoe to the Sales OU allowed the group policy to apply to jdoe so that the shortcut to the S drive would appear.
+Moving jdoe to the Sales OU allowed the group policy to apply to jdoe so that the shortcut to the S drive would appear. Access denied -> security group in effect -> fixed by the membership plus a new sign in
 
 ## Notes / prevention
 The root cause of this ticket was the faulty mapping of the group policy Map Sales Drive. The group policy was applied to the sales OU, however Jordan's account was inside the Users container. 
