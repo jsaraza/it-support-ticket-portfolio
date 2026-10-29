@@ -26,7 +26,6 @@ HR is onboarding a new user account for the new hire, Jordan Doe, in the sales d
 5. the temporary password wasn't recorded, so you reset it before first signing in.
 
 ## Verification, from the user's side
-<!-- What Jordan could do: sign in and change his password, MFA prompt, send mail, create a file on the Sales site; and what he couldn't do: admin centre denied. Link each screenshot. -->
 - Signed in from a private window and cchanged his password from first sign in. MFA was prompted and it was setup using a qr code with microsofts authenticate.
 - Mail works both ways, sent "Test From Jordan" to admin account and admin replied. ![Email sent and received](../../screenshots/t009/t009-outlook-inbox.png)
 - Sharepoint works. Document.docx in Sales -> Documents ![Modified By: Jordan Doe](../../screenshots/t009/t009-sharepoint-sales.png)
@@ -39,6 +38,3 @@ Admin confirms with user Jordan Doe that he has logged in. Resolved as "fixed"; 
 1. Lab limitation: the account is cloud only. Real situation, user created in AD on premises and synced to Microsoft 365 with Entra Connect. Lab is isolate so it cannot sync
 2. Temporary password must be treated as a credential as it is a temporary login for the user
 3. Prevention: Deliver temporary password to the manager immediately through a secure channel.
-<!-- 1. Lab limitation: the account is cloud-only. In a real company it would be created in on-premises AD and synced to Microsoft 365. Say why your lab can't do that.
-     2. Anything that went wrong, e.g. the temporary password wasn't recorded and you reset it.
-     3. One improvement: an onboarding checklist, or creating the account early with sign-in blocked until the start date. -->
