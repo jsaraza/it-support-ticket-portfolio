@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Priority | P2 |
+| Priority | P4 |
 | Category | Service request / Onboarding |
 | Reported by | HR, on behalf of Jordan Doe (Sales, new hire) |
 | Date | 2026-10-22 |
@@ -29,8 +29,8 @@ HR is onboarding a new user account for the new hire, Jordan Doe, in the sales d
 <!-- What Jordan could do: sign in and change his password, MFA prompt, send mail, create a file on the Sales site; and what he couldn't do: admin centre denied. Link each screenshot. -->
 - Signed in from a private window and cchanged his password from first sign in. MFA was prompted and it was setup using a qr code with microsofts authenticate.
 - Mail works both ways, sent "Test From Jordan" to admin account and admin replied. ![Email sent and received](../../screenshots/t009/t009-outlook-inbox.png)
-- Sharepoint works. Document.docx in Sales -> Documents ![Modified By: Jordan Doe](../../t009-sharepoint-sales.png)
-- ![user license](../../t009-user-license.png) ![sales member](../../t009-sales-member.png)
+- Sharepoint works. Document.docx in Sales -> Documents ![Modified By: Jordan Doe](../../screenshots/t009/t009-sharepoint-sales.png)
+- ![user license](../../screenshots/t009/t009-user-license.png) ![sales member](../../screenshots/t009/t009-sales-member.png)
 
 ## Resolution
 Admin confirms with user Jordan Doe that he has logged in. Resolved as "fixed"; closed
