@@ -36,7 +36,7 @@ First step is to login as jdoe to start diagnosing the issue.
 S: drive appears in file explorer and user is finally able to access the S: drive and create a text file. Running 'gpresult /r' shows Map Sales Drive. 
 
 ## Resolution
-Moving jdoe to the Sales OU allowed the group policy to apply to jdoe so that he could have access to the S drive.
+Moving jdoe to the Sales OU allowed the group policy to apply to jdoe so that the shortcut to the S drive would appear.
 
 ## Notes / prevention
 The root cause of this ticket was the faulty mapping of the group policy Map Sales Drive. The group policy was applied to the sales OU, however Jordan's account was inside the Users container. 
