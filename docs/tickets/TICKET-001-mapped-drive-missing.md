@@ -16,8 +16,11 @@ First step is to login as jdoe to start diagnosing the issue.
 
 1. Opened '\\AD-DC01\Sales' to first determine if jdoe has access to the drive at all. RESULT: "permission error". Rules out DNS or the network issue because the server answered.
   ![](../../screenshots/t001/t001-no-salesshare-access.png)
+
 2. Run 'gpresult /r' and look at the user settings. RESULT: Applied Under Group Policy Objects the Map Sales Drive is not listed and CN=Users, NOT Sales OU. Rules out a broken faulty drive. Leads us to believe that the issue is scope of GPO
   ![](../../screenshots/t001/t001-diagnose-user-settings.png)
+
+
 3. Check the Group Policy Manager to verify the scope of Map Sales Drive. Found out that it is linked to the Sales OU only and not the User container, Jordan Doe is inside the User container and not the Sales OU .
    ![](../../screenshots/t001/t001-diagnose-gpo-scope.png)  
 
