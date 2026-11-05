@@ -38,6 +38,7 @@ Full asset details are in the [asset register](docs/asset-register.md).
 | CR | Change | Result |
 |---|---|---|
 | [CR-001](docs/change-requests/CR-001-lockout-threshold.md) | Raise the domain account lockout threshold from 3 to 10 | Completed; verified before and after with `net accounts /domain` and a user-side lockout test |
+| [CR-002](docs/change-requests/CR-002-dc-licence-extension.md) | Extend the domain controller's evaluation licence before it expires | Completed; verified with `slmgr /dlv` (evaluation period restored) and a user-side sign-in and S: drive check |
 
 Change requests follow a [template](docs/change-requests/TEMPLATE.md): risk rating,
 backout plan, and verification from the user's side.
